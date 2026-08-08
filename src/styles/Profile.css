@@ -1,0 +1,66 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
+}
+
+.profile-page{
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:linear-gradient(135deg,#2563eb,#4f46e5);
+}
+
+.profile-card{
+width:420px;
+background:white;
+padding:40px;
+border-radius:20px;
+box-shadow:0 10px 30px rgba(0,0,0,0.2);
+text-align:center;
+}
+
+.profile-avatar{
+font-size:80px;
+margin-bottom:20px;
+}
+
+.profile-card h1{
+color:#1e3a8a;
+margin-bottom:25px;
+}
+
+.profile-info{
+margin-bottom:20px;
+padding:15px;
+background:#f4f7ff;
+border-radius:10px;
+}
+
+.profile-info h3{
+color:#2563eb;
+margin-bottom:8px;
+}
+
+.profile-info p{
+color:#555;
+word-break:break-word;
+}
+
+.logout-btn{
+width:100%;
+padding:14px;
+background:#ef4444;
+color:white;
+border:none;
+border-radius:10px;
+font-size:16px;
+cursor:pointer;
+margin-top:20px;
+}
+
+.logout-btn:hover{
+background:#dc2626;
+}

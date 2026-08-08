@@ -1,0 +1,144 @@
+.view-page {
+  min-height: 100vh;
+  display: flex;
+  background: linear-gradient(135deg, #eef2ff, #f8fafc);
+}
+
+/* Sidebar */
+
+.view-page .sidebar {
+  width: 250px;
+  min-height: 100vh;
+  background: #111827;
+  color: white;
+  padding: 25px 20px;
+  box-sizing: border-box;
+}
+
+.view-page .sidebar h2 {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.view-page .sidebar nav {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.view-page .sidebar nav a {
+  color: #d1d5db;
+  text-decoration: none;
+  padding: 13px 15px;
+  border-radius: 8px;
+}
+
+.view-page .sidebar nav a:hover {
+  background: #374151;
+  color: white;
+}
+
+.view-page .sidebar nav a.active {
+  background: #4f46e5;
+  color: white;
+}
+
+/* Content */
+
+.view-content {
+  flex: 1;
+  padding: 45px;
+}
+
+.view-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.view-header h1 {
+  margin: 0;
+  color: #111827;
+}
+
+.view-header p {
+  color: #6b7280;
+}
+
+.add-button {
+  text-decoration: none;
+  background: #4f46e5;
+  color: white;
+  padding: 12px 18px;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+.add-button:hover {
+  background: #4338ca;
+}
+
+/* Empty */
+
+.empty-box {
+  background: white;
+  border-radius: 18px;
+  padding: 60px 30px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.empty-icon {
+  font-size: 50px;
+}
+
+.empty-box h2 {
+  color: #374151;
+}
+
+.empty-box p {
+  color: #6b7280;
+  margin-bottom: 25px;
+}
+
+/* Certificate Grid */
+
+.certificate-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+.certificate-card {
+  background: white;
+  padding: 25px;
+  border-radius: 16px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+  border: 1px solid #e5e7eb;
+}
+
+.certificate-card:hover {
+  transform: translateY(-3px);
+  transition: 0.2s;
+}
+
+.certificate-icon {
+  font-size: 40px;
+}
+
+.certificate-card h2 {
+  color: #111827;
+  margin: 15px 0;
+}
+
+.certificate-card p {
+  color: #4b5563;
+  line-height: 1.5;
+}
+
+.description {
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px solid #e5e7eb;
+}
