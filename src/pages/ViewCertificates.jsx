@@ -14,31 +14,22 @@ function ViewCertificates() {
   }, []);
 
   const fetchCertificates = async () => {
-
     try {
-
       const querySnapshot = await getDocs(
         collection(db, "certificates")
       );
 
       const certificateList = querySnapshot.docs.map((doc) => ({
         id: doc.id,
-        ...doc.data()
+        ...doc.data(),
       }));
 
       setCertificates(certificateList);
 
     } catch (error) {
-
-      console.error(
-        "Error fetching certificates:",
-        error
-      );
-
+      console.error("Error fetching certificates:", error);
     } finally {
-
       setLoading(false);
-
     }
   };
 
@@ -145,7 +136,7 @@ function ViewCertificates() {
 
                 <p>
                   <strong>Issued By:</strong>{" "}
-                  {certificate.issuer}
+                  {certificate.organization}
                 </p>
 
                 <p>

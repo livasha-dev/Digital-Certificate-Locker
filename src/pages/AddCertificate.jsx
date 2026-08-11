@@ -1,11 +1,10 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { collection, addDoc } from "firebase/firestore";
 import { db } from "../firebase";
 import "../styles/AddCertificate.css";
 
 function AddCertificate() {
-  const navigate = useNavigate();
 
   const [certificateName, setCertificateName] = useState("");
   const [issuer, setIssuer] = useState("");
@@ -17,20 +16,23 @@ function AddCertificate() {
 
     try {
       await addDoc(collection(db, "certificates"), {
-        certificateName: certificateName,
-        issuer: issuer,
-        issueDate: issueDate,
-        description: description,
-        createdAt: new Date()
+        certificateName,
+        organization: issuer,
+        issueDate,
+        description,
+        createdAt: new Date(),
       });
 
-      alert("Certificate added successfully!");
+      alert("Certificate Added Successfully!");
 
-      navigate("/view-certificates");
+      setCertificateName("");
+      setIssuer("");
+      setIssueDate("");
+      setDescription("");
 
     } catch (error) {
-      console.error("Error adding certificate:", error);
-      alert("Failed to add certificate.");
+      console.error(error);
+      alert(error.message);
     }
   };
 
@@ -83,9 +85,7 @@ function AddCertificate() {
                 type="text"
                 placeholder="Enter certificate name"
                 value={certificateName}
-                onChange={(e) =>
-                  setCertificateName(e.target.value)
-                }
+                onChange={(e) => setCertificateName(e.target.value)}
                 required
               />
 
@@ -99,9 +99,7 @@ function AddCertificate() {
                 type="text"
                 placeholder="Enter organization"
                 value={issuer}
-                onChange={(e) =>
-                  setIssuer(e.target.value)
-                }
+                onChange={(e) => setIssuer(e.target.value)}
                 required
               />
 
@@ -114,9 +112,7 @@ function AddCertificate() {
               <input
                 type="date"
                 value={issueDate}
-                onChange={(e) =>
-                  setIssueDate(e.target.value)
-                }
+                onChange={(e) => setIssueDate(e.target.value)}
                 required
               />
 
@@ -130,9 +126,7 @@ function AddCertificate() {
                 placeholder="Enter certificate description"
                 rows="4"
                 value={description}
-                onChange={(e) =>
-                  setDescription(e.target.value)
-                }
+                onChange={(e) => setDescription(e.target.value)}
               />
 
             </div>
